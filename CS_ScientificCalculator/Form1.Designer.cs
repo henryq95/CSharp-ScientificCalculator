@@ -33,10 +33,6 @@
             this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scientificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.temperatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unitConversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.multiplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtDisplay = new System.Windows.Forms.TextBox();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnCE = new System.Windows.Forms.Button();
@@ -80,17 +76,16 @@
             this.btnPi = new System.Windows.Forms.Button();
             this.lblShowOp = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbCtoF = new System.Windows.Forms.RadioButton();
+            this.rbFtoC = new System.Windows.Forms.RadioButton();
+            this.rbKelvin = new System.Windows.Forms.RadioButton();
             this.txtTemperature = new System.Windows.Forms.TextBox();
-            this.button42 = new System.Windows.Forms.Button();
-            this.button41 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnConvert = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblConvertResult = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,9 +94,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1174, 24);
@@ -113,59 +106,31 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.standardToolStripMenuItem,
             this.scientificToolStripMenuItem,
-            this.temperatureToolStripMenuItem,
-            this.unitConversionToolStripMenuItem,
-            this.multiplicationToolStripMenuItem});
+            this.temperatureToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.fileToolStripMenuItem.Text = "Mode";
             // 
             // standardToolStripMenuItem
             // 
             this.standardToolStripMenuItem.Name = "standardToolStripMenuItem";
-            this.standardToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.standardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.standardToolStripMenuItem.Text = "Standard";
             this.standardToolStripMenuItem.Click += new System.EventHandler(this.standardToolStripMenuItem_Click);
             // 
             // scientificToolStripMenuItem
             // 
             this.scientificToolStripMenuItem.Name = "scientificToolStripMenuItem";
-            this.scientificToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.scientificToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.scientificToolStripMenuItem.Text = "Scientific";
             this.scientificToolStripMenuItem.Click += new System.EventHandler(this.scientificToolStripMenuItem_Click);
             // 
             // temperatureToolStripMenuItem
             // 
             this.temperatureToolStripMenuItem.Name = "temperatureToolStripMenuItem";
-            this.temperatureToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.temperatureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.temperatureToolStripMenuItem.Text = "Temperature";
             this.temperatureToolStripMenuItem.Click += new System.EventHandler(this.temperatureToolStripMenuItem_Click);
-            // 
-            // unitConversionToolStripMenuItem
-            // 
-            this.unitConversionToolStripMenuItem.Name = "unitConversionToolStripMenuItem";
-            this.unitConversionToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.unitConversionToolStripMenuItem.Text = "Unit Conversion";
-            this.unitConversionToolStripMenuItem.Click += new System.EventHandler(this.unitConversionToolStripMenuItem_Click);
-            // 
-            // multiplicationToolStripMenuItem
-            // 
-            this.multiplicationToolStripMenuItem.Name = "multiplicationToolStripMenuItem";
-            this.multiplicationToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.multiplicationToolStripMenuItem.Text = "Multiplication";
-            this.multiplicationToolStripMenuItem.Click += new System.EventHandler(this.multiplicationToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
             // 
             // txtDisplay
             // 
@@ -590,12 +555,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtTemperature);
-            this.groupBox1.Controls.Add(this.button42);
-            this.groupBox1.Controls.Add(this.button41);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btnReset);
+            this.groupBox1.Controls.Add(this.btnConvert);
+            this.groupBox1.Controls.Add(this.lblConvertResult);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -606,20 +570,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Temperature";
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(331, 391);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 38);
-            this.textBox1.TabIndex = 10;
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.rbCtoF);
+            this.groupBox2.Controls.Add(this.rbFtoC);
+            this.groupBox2.Controls.Add(this.rbKelvin);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(28, 91);
             this.groupBox2.Name = "groupBox2";
@@ -628,42 +584,44 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Select Conversion Type";
             // 
-            // radioButton3
+            // rbCtoF
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(6, 43);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(258, 33);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Celsius to Fahrenheit";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbCtoF.AutoSize = true;
+            this.rbCtoF.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCtoF.Location = new System.Drawing.Point(6, 43);
+            this.rbCtoF.Name = "rbCtoF";
+            this.rbCtoF.Size = new System.Drawing.Size(258, 33);
+            this.rbCtoF.TabIndex = 5;
+            this.rbCtoF.TabStop = true;
+            this.rbCtoF.Text = "Celsius to Fahrenheit";
+            this.rbCtoF.UseVisualStyleBackColor = true;
+            this.rbCtoF.CheckedChanged += new System.EventHandler(this.rbCtoF_CheckedChanged);
             // 
-            // radioButton2
+            // rbFtoC
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(6, 82);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(258, 33);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Fahrenheit to Celsius";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbFtoC.AutoSize = true;
+            this.rbFtoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFtoC.Location = new System.Drawing.Point(6, 82);
+            this.rbFtoC.Name = "rbFtoC";
+            this.rbFtoC.Size = new System.Drawing.Size(258, 33);
+            this.rbFtoC.TabIndex = 4;
+            this.rbFtoC.TabStop = true;
+            this.rbFtoC.Text = "Fahrenheit to Celsius";
+            this.rbFtoC.UseVisualStyleBackColor = true;
+            this.rbFtoC.CheckedChanged += new System.EventHandler(this.rbFtoC_CheckedChanged);
             // 
-            // radioButton1
+            // rbKelvin
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(6, 121);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(97, 33);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Kelvin";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rbKelvin.AutoSize = true;
+            this.rbKelvin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbKelvin.Location = new System.Drawing.Point(6, 121);
+            this.rbKelvin.Name = "rbKelvin";
+            this.rbKelvin.Size = new System.Drawing.Size(97, 33);
+            this.rbKelvin.TabIndex = 3;
+            this.rbKelvin.TabStop = true;
+            this.rbKelvin.Text = "Kelvin";
+            this.rbKelvin.UseVisualStyleBackColor = true;
+            this.rbKelvin.CheckedChanged += new System.EventHandler(this.rbKelvin_CheckedChanged);
             // 
             // txtTemperature
             // 
@@ -673,41 +631,35 @@
             this.txtTemperature.Size = new System.Drawing.Size(100, 38);
             this.txtTemperature.TabIndex = 8;
             // 
-            // button42
+            // btnReset
             // 
-            this.button42.Location = new System.Drawing.Point(311, 435);
-            this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(120, 50);
-            this.button42.TabIndex = 7;
-            this.button42.Text = "Reset";
-            this.button42.UseVisualStyleBackColor = true;
+            this.btnReset.Location = new System.Drawing.Point(311, 435);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(120, 50);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // button41
+            // btnConvert
             // 
-            this.button41.Location = new System.Drawing.Point(6, 435);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(120, 50);
-            this.button41.TabIndex = 6;
-            this.button41.Text = "Convert";
-            this.button41.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 374);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 31);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
+            this.btnConvert.Location = new System.Drawing.Point(6, 435);
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.Size = new System.Drawing.Size(120, 50);
+            this.btnConvert.TabIndex = 6;
+            this.btnConvert.Text = "Convert";
+            this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 325);
+            this.label3.Location = new System.Drawing.Point(218, 386);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(331, 31);
+            this.label3.Size = new System.Drawing.Size(92, 31);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Result of Converted Value";
+            this.label3.Text = "Result";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -718,11 +670,21 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Enter Value to Convert";
             // 
+            // lblConvertResult
+            // 
+            this.lblConvertResult.AutoSize = true;
+            this.lblConvertResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblConvertResult.Location = new System.Drawing.Point(328, 384);
+            this.lblConvertResult.Name = "lblConvertResult";
+            this.lblConvertResult.Size = new System.Drawing.Size(86, 33);
+            this.lblConvertResult.TabIndex = 5;
+            this.lblConvertResult.Text = "          ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 552);
+            this.ClientSize = new System.Drawing.Size(1174, 539);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblShowOp);
             this.Controls.Add(this.btnPercent);
@@ -789,10 +751,6 @@
         private System.Windows.Forms.ToolStripMenuItem standardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scientificToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem temperatureToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem unitConversionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem multiplicationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.TextBox txtDisplay;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnCE;
@@ -837,16 +795,15 @@
         private System.Windows.Forms.Label lblShowOp;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbCtoF;
+        private System.Windows.Forms.RadioButton rbFtoC;
+        private System.Windows.Forms.RadioButton rbKelvin;
         private System.Windows.Forms.TextBox txtTemperature;
-        private System.Windows.Forms.Button button42;
-        private System.Windows.Forms.Button button41;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblConvertResult;
     }
 }
 

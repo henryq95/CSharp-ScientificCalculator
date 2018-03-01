@@ -15,6 +15,8 @@ namespace CS_ScientificCalculator
         Double results = 0;
         String operation = "";
         bool enter_value = false;
+        float fCelsius, fFahrenheit, fKelvin;
+        char tempOperation;
 
         public Form1()
         {
@@ -40,11 +42,6 @@ namespace CS_ScientificCalculator
             txtDisplay.Width = 675;
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void temperatureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Width = 1190;
@@ -52,19 +49,6 @@ namespace CS_ScientificCalculator
             txtDisplay.Width = 675;
         }
 
-        private void unitConversionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Width = 1190;
-            this.Height = 580;
-            txtDisplay.Width = 675;
-        }
-
-        private void multiplicationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Width = 1190;
-            this.Height = 580;
-            txtDisplay.Width = 675;
-        }
 
         private void button_Click(object sender, EventArgs e)
         {
@@ -269,6 +253,53 @@ namespace CS_ScientificCalculator
             double value = double.Parse(txtDisplay.Text);
             value = 1.0/value;
             txtDisplay.Text = System.Convert.ToString(value);
+        }
+
+        private void rbCtoF_CheckedChanged(object sender, EventArgs e)
+        {
+            tempOperation = 'F';
+        }
+
+        private void rbFtoC_CheckedChanged(object sender, EventArgs e)
+        {
+            tempOperation = 'C';
+        }
+
+        private void rbKelvin_CheckedChanged(object sender, EventArgs e)
+        {
+            tempOperation = 'K';
+        }
+
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            switch (tempOperation)
+            {
+                case 'F':
+                    //Celsius to Fahrenheit
+                    fCelsius = float.Parse(txtTemperature.Text);
+                    lblConvertResult.Text = ((((9 * fCelsius) / 5) + 32).ToString());
+                    break;
+                case 'C':
+                    //Fahrenheit to Celsius
+                    fFahrenheit = float.Parse(txtTemperature.Text);
+                    lblConvertResult.Text = ((((fFahrenheit - 32) * 5) / 9).ToString());
+                    break;
+                case 'K':
+                    //Convert Fahrenheit to Kelvin
+                    fKelvin = float.Parse(txtTemperature.Text);
+                    lblConvertResult.Text = (((((9 * fKelvin) / 5) + 32) + 273.15).ToString());
+                    break;
+
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            lblConvertResult.Text = "          ";
+            txtTemperature.Clear();
+            rbCtoF.Checked = false;
+            rbFtoC.Checked = false;
+            rbKelvin.Checked = false;
         }
 
         private void btnLnX_Click(object sender, EventArgs e)
